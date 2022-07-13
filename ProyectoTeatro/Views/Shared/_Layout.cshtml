@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProyectoTeatro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin-bottom: 0px !important;
+            background-color: #460d0a;
+        }
+
+        .footer {
+            background-color: #241f21;
+            position: relative !important;
+            font-family: sans-serif;
+            overflow: hidden;
+            height: 10vh;
+        }
+
+            .footer .container, .footer .container a {
+                color: #f8f9fa;
+                font-size: .6rem;
+            }
+
+        nav {
+            position: relative;
+        }
+
+        #portada {
+            background-color: black;
+            height: 100vh;
+            position: relative;
+        }
+
+        #imagenPortada {
+            position: absolute;
+            height: 100%;
+            opacity: 40%;
+        }
+
+            #imagenPortada img {
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+            }
+
+        .barraNavegacion {
+            background-color: transparent !important;
+        }
+
+        a.nav-link {
+            color: #f8f9faa4 !important;
+        }
+
+            a.nav-link.drop {
+                color: white !important;
+            }
+
+            a.nav-link:hover {
+                color: #BE6E5C !important;
+                transition: 0.5s;
+            }
+
+            a.nav-link.drop:hover {
+                color: #BE6E5C !important;
+            }
+
+        .a-imgLogo .imgLogo {
+            width: 19vh;
+            position: relative;
+        }
+
+        .container.contenedorNavegacion {
+            margin-right: 0px;
+            margin-left: 0;
+        }
+
+        .dropdown-menu {
+            background-color: black;
+            opacity: 40%;
+        }
+
+
+        .contenedorTitulo {
+            position: absolute;
+        }
+
+            .contenedorTitulo h1 {
+                font-size: 90px;
+                color: white;
+                z-index: 500;
+                font-family: 'Shojumaru', cursive;
+            }
+
+        .contenedorImagenTitulo {
+            position: absolute;
+            opacity: 80%;
+            top: 8em;
+        }
+
+
+
+            .contenedorImagenTitulo img {
+                height: 200px;
+                width: 300px;
+            }
+
+        .contenedorTitulo h1::after {
+            left: 20%;
+        }
+
+        .contenedorTitulo h1::before {
+            right: 20%;
+        }
+    </style>
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+    <header>
+        <div id="portada">
+            <div id="imagenPortada">
+                <img src="/images/teatro_colon_interior_nicolas1500x610.jpg" class="img-fluid" alt="">
+            </div>
+
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm  box-shadow mb-3 barraNavegacion">
+                <div class="container contenedorNavegacion">
+                    <a class="navbar-brand a-imgLogo" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="/images/White Minimalist Podcast Logo (2).png" class="imgLogo" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <!--<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Obras
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+                                    @**
+                                        <li>@Html.ActionLink("Obra", "", "Obra")</li>
+                                    *@
+                                    <!--<li><a class="nav-link drop" asp-area="" asp-controller="Obra" asp-action="">Ver Obras</a></li>
+                                </ul>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="contenedorTitulo col-12 container-fluid d-flex justify-content-center align-items-center">
+                <h1 class="titulo col-12 text-center">Login</h1>
+                <div class="contenedorImagenTitulo col-12 text-center">
+                    <img class="img-fluid" src="/images/White Minimalist Podcast Logo (4).png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted text-center">
+        <div class="container">
+            &copy; 2022 - ProyectoTeatro - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

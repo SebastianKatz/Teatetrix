@@ -1,0 +1,61 @@
+﻿@model ProyectoTeatro.Models.Obra
+
+@{ ViewData["Title"] = "Compra Realizada"; }
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProyectoTeatro</title>
+    <link rel="stylesheet" href="~/css/reservaConfirmada.css" />
+    <style>
+
+        .titulo {
+            visibility: hidden;
+            margin-left: -300px;
+            margin-bottom: 100px;
+        }
+
+            .titulo::after {
+                content: "¡Compra exitosa! :)";
+                visibility: visible;
+                font-size: .5em;
+                
+            }
+
+        
+    </style>
+
+</head>
+<body>
+    <div class="ticket ticket-1">
+
+        <div class="date">
+            <span class="day">@ViewBag.dia</span>
+            <span class="month-and-time">@ViewBag.mes</br><span class="small">@ViewBag.hora</span></span>
+        </div>
+
+        <div class="artist">
+            <span class="name">Obra - @ViewBag.nombreObra</span>
+            </br>
+            <span class="live small">@ViewBag.cantidadEntradas - Tickets</span>
+        </div>
+
+        <div class="location">
+            <span>Sala - @ViewBag.nombreSala</span>
+            </br>
+            <span class="small"><span>Teatetrix</span>
+        </div>
+
+        <div class="rip">
+        </div>
+
+        <div class="cta">
+            <button class="buy" href=""><a class="nav-link drop" asp-area="" asp-controller="Obra" asp-action="">Comprar más entradas</a></button>
+        </div>
+
+    </div>
+</body>
+</html>

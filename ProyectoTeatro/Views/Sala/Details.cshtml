@@ -1,0 +1,56 @@
+﻿@model ProyectoTeatro.Models.Obra
+
+@{ ViewData["Title"] = "Details"; }
+
+
+<head>
+
+    <style>
+    </style>
+</head>
+
+<div class="row ">
+    <div class="col-12 container-fluid d-flex">
+        <form asp-action="EfectuarReserva" asp-route-id="@Model.IdObra" class="col-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<button onclick="mostrarAsientos()">Ver butacas disponibles</button>*@
+            <div class="form-group">
+                <label for="cantidadEntradas" class="control-label">Selecciona la cantidad de entradas:</label>
+                <select name="cantidadEntradas">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                    <option value=10>10</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Reservar" class="btn btn-primary" />
+            </div>
+            @if (ViewBag.capacidadSala != null)
+            {
+                <div>
+                    <p>Capacidad disponible: @ViewBag.capacidadSala</p>
+                </div>
+            }
+        </form>
+        <div>
+            <h1 class="booked"></h1>
+            <h1 class="seatsbooked"></h1>
+        </div>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
