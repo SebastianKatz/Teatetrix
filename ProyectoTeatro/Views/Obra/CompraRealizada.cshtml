@@ -19,12 +19,15 @@
         }
 
             .titulo::after {
-                content: "¡Compra exitosa! :)";
+                content: "¡Compra exitosa! :) - Visualiza tu ticket!";
                 visibility: visible;
                 font-size: .5em;
                 
             }
 
+        .location {
+            margin: 60px 0 0 180px !important;
+        }
         
     </style>
 
@@ -40,7 +43,7 @@
         <div class="artist">
             <span class="name">Obra - @ViewBag.nombreObra</span>
             </br>
-            <span class="live small">@ViewBag.cantidadEntradas - Tickets</span>
+            <span class="live small">@ViewBag.cantidadEntradas - Tickets</br>Entradas por orden de llegada</span>
         </div>
 
         <div class="location">
